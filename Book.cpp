@@ -4,6 +4,8 @@ Book Book::operator=(const Book other) {
 	this->auth = other.auth;
 	this->title = other.title;
 	this->pages = other.pages;
+
+	return *this;
 }
 
 bool Book::operator==(const Book other) {

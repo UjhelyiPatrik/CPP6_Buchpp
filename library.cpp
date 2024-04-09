@@ -12,10 +12,6 @@ Library::Library(Book book):numberOfBooks(1) {
 
 }
 
-Library::~Library(){
-	delete[]books;
-}
-
 void Library::add(Book newBook) {
 
 	Book* newArray = new Book[numberOfBooks+1];
@@ -78,5 +74,39 @@ Library& Library::operator+=(const Library &other) {
 }
 
 Library& Library::operator-=(const Book &deletedBook) {
+
+	for (int i = 0; i < this->numberOfBooks; i++)
+	{
+		if (this->books[i] == deletedBook) {
+
+			this->books[i] = this->books[this->numberOfBooks - 1];
+
+		}
+	}
+
+	Book* newArray = new Book[numberOfBooks -1];
+
+	for (int i = 0; i < numberOfBooks-1; i++)
+	{
+		newArray[i] = books[i];
+	}
+
+	delete[]books;
+
+	books = newArray;
+
+	numberOfBooks--;
+
+	return *this;
+}
+
+ostream& operator<<(ostream &ost, Library &lib) {
+
+	for (int i = 0; i < lib.numberOfBooks; i++)
+	{
+		ost << lib.books[i].getauth() << ": " << lib.books[i].gettitle() << " (" << lib.books[i].getpages() << "p)" << endl;		
+	}
+
+	return ost;
 
 }
