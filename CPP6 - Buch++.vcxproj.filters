@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Buch.cpp">
+    <ClCompile Include="Book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -26,7 +26,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Buch.hpp">
+    <ClInclude Include="Book.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="library.hpp">
